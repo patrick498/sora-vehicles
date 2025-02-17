@@ -72,3 +72,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Custom Added
+gem 'devise'
+gem 'ostruct'
