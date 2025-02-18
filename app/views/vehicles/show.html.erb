@@ -16,7 +16,7 @@
     </div>
     <div class="col-12 col-md-5">
       <% if @vehicle.images.attached? %>
-        <div class="vehicle-images">
+        <div class="vehicle-images mb-2">
           <% @vehicle.images.each do |image| %>
             <%= cl_image_tag image.key, class: 'vehicle-image' %>
           <% end %>
@@ -24,6 +24,14 @@
       <% else %>
         <p>No images available for this vehicle.</p>
       <% end %>
+      <div class='col-12 col-md-5'>
+        <h3>Book this vehicle</h3>
+        <%= simple_form_for [@vehicle, @booking] do |f| %>
+          <%= f.input :start_date, html5: true %>
+          <%= f.input :end_date, html5: true %>
+          <%= f.button :submit, 'Book now' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
