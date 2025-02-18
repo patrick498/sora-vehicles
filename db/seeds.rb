@@ -1,3 +1,5 @@
+require "open-uri"
+
 puts "Cleaning the db...\n"
 puts "Destroying Users\n"
 User.destroy_all
@@ -255,6 +257,30 @@ Vehicle.create!(
 )
 puts "Added #{Vehicle.count} vehicles\n"
 puts "############"
+
+
+puts "Attaching images...\n"
+SEED_IMAGES_PATH = Rails.root.join("app/assets/images/seeds")
+vehicles = Vehicle.all
+vehicles.each do |vehicle|
+  puts "Attaching for : #{vehicle.model}"
+  vehicle_folder = SEED_IMAGES_PATH.join(vehicle[:model])
+  if Dir.exist?(vehicle_folder)
+    # Get all images inside the folder
+    image_files = Dir.children(vehicle_folder).sort.map { |filename| vehicle_folder.join(filename) }
+
+    image_files.each do |image_path|
+      # Open the image file and attach it
+      puts "Attaching #{image_path}...\n"
+      File.open(image_path) do |file|
+        vehicle.images.attach(io: file, filename: File.basename(image_path))
+      end
+    end
+  else
+    puts "Warning: No images found for #{vehicle[:model]} in #{vehicle_folder}"
+  end
+end
+puts "Images attached..."
 
 puts "Adding the bookings..."
 vehicles = Vehicle.all.to_a
