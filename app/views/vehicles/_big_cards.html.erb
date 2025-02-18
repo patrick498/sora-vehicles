@@ -1,13 +1,12 @@
 <!--Make sure to check the imgs cos Im not sure lol-->
 <div class="big-card">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <%= cl_image_tag vehicle.images.first.key%>
   <div class="big-card-infos">
      <div>
       <h2><%=vehicle.model%></h2>
        <p><%=vehicle.brand%></p>
       <p><%=vehicle.vehicle_type.capitalize%></p>
     </div>
-    <h2 class="big-card-pricing">£99.99</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="big-card-user avatar-bordered" />
+    <h2 class="big-card-pricing"><%=vehicle.price_day%></h2>
   </div>
 </div>
