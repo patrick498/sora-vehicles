@@ -1,0 +1,61 @@
+.card-trip {
+  width: 60%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-trip>img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.vehicle-images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  gap: 10px;
+}
+
+.image-container {
+  margin: 0px;
+  height: 100px;
+}
+
+.image-container img {
+  max-width: 200px;
+  /* Adjust the size as needed */
+  height: auto;
+  border: 1px solid #ccc;
+  margin: 0;
+  /* Optional styling */
+}
