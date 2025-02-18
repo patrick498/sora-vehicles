@@ -6,19 +6,19 @@
           <p><%= booking.start_date.strftime("%d") %></p>
           <h2><%= booking.start_date.strftime("%a") %></h2>
         </div>
-        <div class="d-flex justify-content-between justify-content-center" style="border-left: solid 1px lightgrey; width:80%;">
-          <div class="card-booking-infos" style="text-align: left;">
+        <div class="d-flex justify-content-between" style="border-left: solid 1px lightgrey; width:80%;">
+          <div class="card-booking-infos" style="text-align: left; width: 45%;">
             <p><%= booking.start_date.strftime("%Y %b %d") %> - <%= booking.start_date.strftime("%Y %b %d") %></p>
             <p><i class="fa-solid fa-location-dot"></i><%= booking.vehicle.location %></p>
           </div>
-          <div class="card-booking-infos" style="text-align: left;">
+          <div class="card-booking-infos" style="text-align: left; width: 40%;">
             <h2><%= booking.vehicle.model %></h2>
             <p><%= booking.vehicle.brand %></p>
           </div>
-          <div class="card-booking-infos" style="text-align: left;">
+          <div class="card-booking-infos" style="text-align: left; width: 25%;">
             <p><i class="fa-solid fa-dollar-sign"></i><%= booking.total_price %></p>
           </div>
-          <div class="card-booking-infos" style="text-align: left;">
+          <div class="card-booking-infos" style="text-align: left; width: 25%;">
             <p><%= booking.status %></p>
           </div>
         </div>
@@ -26,5 +26,5 @@
     </div>
   <% end %>
 <% else %>
-<p>Nothing to see yet</p>
+<p class="mt-5">Nothing to see yet</p>
 <% end %>

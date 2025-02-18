@@ -10,18 +10,21 @@
       <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">Accepted</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canceled-tab" data-bs-toggle="tab" data-bs-target="#canceled" type="button" role="tab" aria-controls="canceled" aria-selected="false">Canceled</button>
+      <button class="nav-link" id="denied-tab" data-bs-toggle="tab" data-bs-target="#denied" type="button" role="tab" aria-controls="denied" aria-selected="false">Denied</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="denied-tab" data-bs-toggle="tab" data-bs-target="#denied" type="button" role="tab" aria-controls="denied" aria-selected="false">Denied</button>
+      <button class="nav-link" id="canceled-tab" data-bs-toggle="tab" data-bs-target="#canceled" type="button" role="tab" aria-controls="canceled" aria-selected="false">Cancelled</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="done-tab" data-bs-toggle="tab" data-bs-target="#done" type="button" role="tab" aria-controls="done" aria-selected="false">Done</button>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab"><%= render "booking_card", bookings: @bookings %></div>
     <div class="tab-pane fade" id="pending" role="tabpanel" aria-labelledby="pending-tab"><%= render "booking_card", bookings: @pending %></div>
     <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab"><%= render "booking_card", bookings: @accepted %></div>
-    <div class="tab-pane fade" id="canceled" role="tabpanel" aria-labelledby="canceled-tab"><%= render "booking_card", bookings: @cancelled %></div>
     <div class="tab-pane fade" id="denied" role="tabpanel" aria-labelledby="denied-tab"><%= render "booking_card", bookings: @denied %></div>
+    <div class="tab-pane fade" id="canceled" role="tabpanel" aria-labelledby="canceled-tab"><%= render "booking_card", bookings: @cancelled %></div>
     <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab"><%= render "booking_card", bookings: @done %></div>
 </div>
 </div>
