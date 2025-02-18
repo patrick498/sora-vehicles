@@ -1,1 +1,29 @@
-<h1>Vehicle show page</h1>
+<div class='container'>
+  <div class='row'>
+    <div class="col-12 col-md-7">
+      <div class="card-trip">
+        <% if @vehicle.images.attached? %>
+          <%= image_tag @vehicle.images.first %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= @vehicle.brand + ' ' + @vehicle.model %></h2>
+            <p><%= @vehicle.description %></p>
+          </div>
+          <h2 class="card-trip-pricing">$<%= @vehicle.price_day %> / day</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-5">
+      <% if @vehicle.images.attached? %>
+        <div class="vehicle-images">
+          <% @vehicle.images.each do |image| %>
+            <%= cl_image_tag image.key, class: 'vehicle-image' %>
+          <% end %>
+        </div>
+      <% else %>
+        <p>No images available for this vehicle.</p>
+      <% end %>
+    </div>
+  </div>
+</div>
