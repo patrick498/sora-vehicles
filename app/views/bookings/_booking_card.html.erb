@@ -8,7 +8,7 @@
         </div>
         <div class="d-flex justify-content-between" style="border-left: solid 1px lightgrey; width:80%;">
           <div class="card-booking-infos" style="text-align: left; width: 45%;">
-            <p><%= booking.start_date.strftime("%Y %b %d") %> - <%= booking.start_date.strftime("%Y %b %d") %></p>
+            <p><%= booking.start_date.strftime("%Y %b %d") %> - <%= booking.end_date.strftime("%Y %b %d") %></p>
             <p><i class="fa-solid fa-location-dot"></i><%= booking.vehicle.location %></p>
           </div>
           <div class="card-booking-infos" style="text-align: left; width: 40%;">
