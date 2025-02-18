@@ -1,4 +1,6 @@
 class VehiclesController < ApplicationController
+  # Skip authentication for the show action
+  skip_before_action :authenticate_user!, only: [:show]
   def index
     @vehicles = Vehicle.all
     @max_price = @vehicles.maximum(:price_day).to_i
@@ -28,5 +30,13 @@ class VehiclesController < ApplicationController
     end
 
   end
+
+
+  def show
+    @vehicle = Vehicle.find(params[:id])
+    @booking = Booking.new
+  end
+
+
 
 end

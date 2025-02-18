@@ -1,0 +1,50 @@
+.small-card {
+  width: 350px;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: .8s;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.small-card > img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.small-card .text-container {
+  background-color: beige;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-top: 10px;
+}
+
+.small-card h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.small-card p {
+  font-size: 12px; /* Increased font size */
+  opacity: 0.8;
+  margin: 5px 0 0 0;
+}
+
+.small-card .small-card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.small-card-infos .small-card-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}

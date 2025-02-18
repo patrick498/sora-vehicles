@@ -1,0 +1,37 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-12 col-md-7">
+      <div class="card-trip">
+        <% if @vehicle.images.attached? %>
+          <%= image_tag @vehicle.images.first %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= @vehicle.brand + ' ' + @vehicle.model %></h2>
+            <p><%= @vehicle.description %></p>
+          </div>
+          <h2 class="card-trip-pricing">$<%= @vehicle.price_day %> / day</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-5">
+      <% if @vehicle.images.attached? %>
+        <div class="vehicle-images mb-2">
+          <% @vehicle.images.each do |image| %>
+            <%= cl_image_tag image.key, class: 'vehicle-image' %>
+          <% end %>
+        </div>
+      <% else %>
+        <p>No images available for this vehicle.</p>
+      <% end %>
+      <div class='col-12 col-md-5'>
+        <h3>Book this vehicle</h3>
+        <%= simple_form_for [@vehicle, @booking] do |f| %>
+          <%= f.input :start_date, html5: true %>
+          <%= f.input :end_date, html5: true %>
+          <%= f.button :submit, 'Book now' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
