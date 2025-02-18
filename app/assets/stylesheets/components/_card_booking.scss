@@ -23,7 +23,11 @@
    .card-booking-infos {
     padding: 0 30px 30px;
     margin: 0 10px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    height: 25%;
+    align-items: start;
+    justify-content: center;
+    height: 50%;
   }
 }
