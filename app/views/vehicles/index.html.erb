@@ -37,15 +37,11 @@
     </div>
     <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
   <% end %>
-  <ul>
+  <div class="cards">
     <% @vehicles.each do |vehicle| %>
-      <%= cl_image_tag(vehicle.images.first.key) %>
-      <p><%= vehicle.vehicle_type %></p>
-      <p><%= vehicle.brand %></p>
-      <p><%= vehicle.model %></p>
-      <p><%= vehicle.location %></p>
+      <%= render 'shared/small_cards', vehicle: vehicle %>
     <% end %>
-  </ul>
+  </div>
 </div>
 <%# t.string "vehicle_type"
 t.string "brand"
