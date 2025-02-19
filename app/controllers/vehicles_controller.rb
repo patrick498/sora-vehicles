@@ -16,7 +16,13 @@ class VehiclesController < ApplicationController
     }.compact_blank # Removes nil or empty values
 
     if filters.present?
-      @vehicles = @vehicles.where(filters)
+      query = []
+      values = {}
+      filters.each do |key, value|
+        query << "#{key} ILIKE :#{key}"
+        values[key] = "%#{value}%" # Adds wildcard for partial match
+      end
+      @vehicles = @vehicles.where(query.join(" AND "), values)
     end
 
     if params[:min_price].present?

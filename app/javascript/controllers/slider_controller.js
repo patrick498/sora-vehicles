@@ -33,4 +33,11 @@ export default class extends Controller {
       hiddenMax.value = Math.round(values[1]);
     })
   }
+
+  disconnect() {
+    if (this.rangeSliderTarget.noUiSlider) {
+      this.rangeSliderTarget.noUiSlider.off("update", this.updateHandler); // Remove event listener
+      this.rangeSliderTarget.noUiSlider.destroy(); // Destroy the slider
+    }
+  }
 }
