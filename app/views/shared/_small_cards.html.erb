@@ -1,12 +1,13 @@
 <!--Make sure to check the imgs cos Im not sure lol-->
 <div class="small-card">
- <%= cl_image_tag vehicle.images.first.key%>
+  <%= cl_image_tag vehicle.images.first.key%>
   <div class="small-card-infos">
     <div>
       <h2><%=vehicle.model%></h2>
-       <p><%=vehicle.brand%></p>
+      <p><%=vehicle.brand%></p>
       <p><%=vehicle.vehicle_type.capitalize%></p>
     </div>
     <h2 class="small-card-pricing"><%=vehicle.price_day%></h2>
   </div>
+  <%= link_to "", vehicle_path(vehicle), class: 'card-vehicle-link' %>
 </div>
