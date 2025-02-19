@@ -3,5 +3,90 @@
   align-items: center;
   justify-content: center;
   margin: 24px 0;
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px 0px;
   gap: 16px;
+  padding: 0 16px;
+
+  textarea:focus, input:focus{
+      outline: none;
+  }
+
+  .form-select {
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-select:focus {
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  select option {
+    padding: 10px; /* Adds space inside the options */
+  }
+}
+
+.search-bar-field {
+  padding: 14px 24px;
+
+  p {
+    margin: 0;
+  }
+
+  input {
+    font-weight: 500;
+    padding-left: 0;
+  }
+  input::placeholder {
+    font-weight: normal;
+  }
+}
+
+#vehicle-type-field {
+  width: 200px;
+  border-right: 1px solid rgba(180, 180, 180, 0.5);
+  &:hover {
+    border-radius: 32px;
+    background-color: rgba(180, 180, 180, 0.5);
+  }
+}
+
+#brand-field {
+  width: 200px;
+  border-right: 1px solid rgba(180, 180, 180, 0.5);
+  &:hover {
+    border-radius: 32px;
+    background-color: rgba(180, 180, 180, 0.5);
+  }
+}
+
+#model-field {
+  width: 200px;
+  border-right: 1px solid rgba(180, 180, 180, 0.5);
+  &:hover {
+    border-radius: 32px;
+    background-color: rgba(180, 180, 180, 0.5);
+  }
+}
+
+#location-field {
+  width: 200px;
+  border-right: 1px solid rgba(180, 180, 180, 0.5);
+  &:hover {
+    border-radius: 32px;
+    background-color: rgba(180, 180, 180, 0.5);
+  }
+}
+
+#price-field {
+  flex-grow: 1;
+}
+
+
+.range-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

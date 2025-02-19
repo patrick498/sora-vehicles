@@ -1,54 +1,61 @@
 <div class="container">
   <%= form_with url: vehicles_path, method: :get, class: "search-bar-form" do %>
-    <%# <div id="search-bar-top" class="w-50"> %>
     <div id="vehicle-type-field" class="search-bar-field">
+      <p>Vehicle type</p>
       <%= select_tag :vehicle_type,
-              options_for_select([["", ""]] + Vehicle.vehicle_types.keys.sort.map { |t| [t.capitalize, t] }, params[:vehicle_type]),
-              class: "form-select border-0"
+              options_for_select([["All", ""]] + Vehicle.vehicle_types.keys.sort.map { |t| [t.capitalize, t] }, params[:vehicle_type]),
+              class: "border-0 bg-transparent w-100 form-select"
         %>
     </div>
-    <div id="brand" class="search-bar-field">
+    <div id="brand-field" class="search-bar-field">
+      <p>Brand</p>
       <%= text_field_tag :brand,
               params[:brand],
-              class: "form-control border-0",
+              class: "border-0 bg-transparent",
               placeholder: "Type a brand..."
         %>
     </div>
-    <%# </div> %>
-    <%# <div id="search-bar-bottom" class="w-50"> %>
     <div id="model-field" class="search-bar-field">
+      <p>Model</p>
       <%= text_field_tag :model,
               params[:model],
-              class: "form-control border-0",
+              class: "border-0 bg-transparent",
               placeholder: "Type a model..."
         %>
     </div>
     <div id="location-field" class="search-bar-field">
+      <p>Location</p>
       <%= text_field_tag :location,
               params[:location],
-              class: "form-control border-0",
+              class: "border-0 bg-transparent",
               placeholder: "Type a location..."
         %>
     </div>
-    <%# </div> %>
-    <div id="price-field" class="search-bar-fiedl" data-controller="slider"
+    <div id="price-field" class="search-bar-field"  data-controller="slider"
           data-slider-min-value="<%= @min_price %>" data-slider-max-value="<%= @max_price %>"
           data-slider-current-min-value="<%= @current_min_price %>" data-slider-current-max-value="<%= @current_max_price %>"
-          class="form-control d-block">
-      <div data-slider-target="rangeSlider"></div>
-      <span data-slider-target="minValue"></span>
-      <span data-slider-target="maxValue"></span>
+          class="d-block">
+      <p class="mb-1">Price range</p>
+      <div data-slider-target="rangeSlider" id="slider-round"></div>
+      <div class="range-values pt-1">
+        <span data-slider-target="minValue"></span>
+        <span class="px-3">~</span>
+        <span data-slider-target="maxValue"></span>
+      </div>
       <input type="hidden" name="min_price" id="min_price" value="value" data-slider-target="hiddenMinPrice">
       <input type="hidden" name="max_price" id="max_price" value="value" data-slider-target="hiddenMaxPrice">
     </div>
-    <%#= submit_tag "Search", name: "", class: "btn btn-primary" %>
     <%= button_tag class: "btn btn-primary rounded-circle h-75", type: "submit" do %>
       <i class="fa-solid fa-magnifying-glass"></i>
     <% end %>
   <% end %>
   <div class="cards mb-3">
-    <% @vehicles.each do |vehicle| %>
-      <%= render 'shared/small_cards', vehicle: vehicle %>
+    <% if @vehicles.any? %>
+      <% @vehicles.each do |vehicle| %>
+        <%= render 'shared/small_cards', vehicle: vehicle %>
+      <% end %>
+    <% else %>
+      <p class="fs-5 mt-3">No vehicle found, try with other filters...</p>
     <% end %>
   </div>
 </div>

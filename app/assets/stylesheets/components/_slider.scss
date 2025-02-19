@@ -1,3 +1,19 @@
+#slider-round {
+  height: 10px;
+}
+
+#slider-round .noUi-connect {
+  background: #014952;
+}
+
+#slider-round .noUi-handle {
+  height: 18px;
+  width: 18px;
+  top: -5px;
+  right: -9px; /* half the width */
+  border-radius: 9px;
+}
+
 /* Functional styling;
  * These styles are required for noUiSlider to function.
  * You don't need to change these rules to apply your design.
@@ -138,30 +154,30 @@
  }
  /* Handle stripes;
   */
- .noUi-handle:before,
- .noUi-handle:after {
-   content: "";
-   display: block;
-   position: absolute;
-   height: 14px;
-   width: 1px;
-   background: #E8E7E6;
-   left: 14px;
-   top: 6px;
- }
- .noUi-handle:after {
-   left: 17px;
- }
- .noUi-vertical .noUi-handle:before,
- .noUi-vertical .noUi-handle:after {
-   width: 14px;
-   height: 1px;
-   left: 6px;
-   top: 14px;
- }
- .noUi-vertical .noUi-handle:after {
-   top: 17px;
- }
+//  .noUi-handle:before,
+//  .noUi-handle:after {
+//    content: "";
+//    display: block;
+//    position: absolute;
+//    height: 14px;
+//    width: 1px;
+//    background: #E8E7E6;
+//    left: 14px;
+//    top: 6px;
+//  }
+//  .noUi-handle:after {
+//    left: 17px;
+//  }
+//  .noUi-vertical .noUi-handle:before,
+//  .noUi-vertical .noUi-handle:after {
+//    width: 14px;
+//    height: 1px;
+//    left: 6px;
+//    top: 14px;
+//  }
+//  .noUi-vertical .noUi-handle:after {
+//    top: 17px;
+//  }
  /* Disabled state;
   */
  [disabled] .noUi-connect {
