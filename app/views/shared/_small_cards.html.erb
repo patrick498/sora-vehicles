@@ -2,12 +2,17 @@
 <div class="small-card">
   <%= cl_image_tag vehicle.images.first.key%>
   <div class="small-card-infos">
-    <div>
-      <h2><%=vehicle.model%></h2>
-      <p><%=vehicle.brand%></p>
-      <p><%=vehicle.vehicle_type.capitalize%></p>
+    <div class="d-flex flex-column justify-content-between h-100">
+      <h2 class="fs-5"><%=vehicle.model%></h2>
+      <p class="fs-6"><%=vehicle.brand%></p>
     </div>
-    <h2 class="small-card-pricing"><%=vehicle.price_day%></h2>
+    <div class="d-flex flex-column justify-content-between h-100">
+      <div class="mb-4 text-end">
+        <i class="fa-solid fa-location-dot"></i>
+        <span><%= vehicle.location %></span>
+      </div>
+      <h2 class="text-end fs-6"><%="$#{number_with_delimiter(vehicle.price_day.to_i, delimiter: ",")}/day"%></h2>
+    </div>
   </div>
-  <%= link_to "", vehicle_path(vehicle), class: 'card-vehicle-link' %>
+  <%#= link_to "", vehicle_path(vehicle), class: 'card-vehicle-link' %>
 </div>

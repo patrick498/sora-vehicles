@@ -3,10 +3,13 @@
     <h1 class="pt-5 pb-5">SoraVé</h1>
     <p> Whether you're planning a special occasion, a business trip,
       or just want to experience the thrill of traveling in style.
-      We provide a great selection of premium vehicles.</p>
-      <%=link_to "Explore more!", vehicles_path, class:"button-sign-up"%>
+      We provide a great selection of premium vehicles.
+    </p>
+    <%=link_to "Explore more!", vehicles_path, class:"button-sign-up"%>
     <div class="button-wraper">
-      <%=link_to "Sign up", new_user_session_path, class:"button-sign-up"%>
+      <% if !user_signed_in? %>
+        <%=link_to "Sign up", new_user_session_path, class:"button-sign-up"%>
+      <% end %>
     </div>
   </div>
 </div>
