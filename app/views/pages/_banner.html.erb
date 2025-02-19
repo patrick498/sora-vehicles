@@ -1,6 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.spinny.com/blog/wp-content/uploads/2024/09/videoframe_0.webp);">
+<div class="banner banner-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.spinny.com/blog/wp-content/uploads/2024/09/videoframe_0.webp);">
   <div class="container">
-  <h1>SoraVé</h1>
-    <button><%=link_to "Sign up", new_user_session_path, style: "text-decoration: none; color:white;"%></button>
+    <h1>SoraVé</h1>
+    <div class="button-wraper">
+      <%=link_to "Sign up", new_user_session_path, class:"button-sign-up"%>
+    </div>
   </div>
 </div>
