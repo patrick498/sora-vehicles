@@ -1,25 +1,26 @@
+.button-wraper {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+}
 
-button {
+.button-sign-up {
   width: 10em;
-  position: relative;
   height: 3.5em;
-  outline: none;
-  background-color: transparent;
   color: white;
-  transition: 1s;
+  transition: .4s;
   border-radius: 0.3em;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 15px;
-  margin-right: 67px;
-  position:absolute;
-  top:0;
-  right:0;
-
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px ridge #149CEA;
 }
 
-button::after {
+.button-sign-up::after {
   content: "";
   position: absolute;
   top: -10px;
@@ -30,7 +31,7 @@ button::after {
   transform-origin: center;
 }
 
-button::before {
+.button-sign-up::before {
   content: "";
   transform-origin: center;
   position: absolute;
@@ -39,12 +40,13 @@ button::before {
   width: 95%;
   height: 40%;
   transition: 0.5s;
+  background-color: #292a35;
 }
 
-button:hover::before, button:hover::after {
-  transform: scale(0)
+.button-sign-up:hover::before, .button-sign-up:hover::after {
+  transform: scale(0);
 }
 
-button:hover {
+.button-sign-up:hover {
   box-shadow: inset 0px 0px 25px #1479EA;
 }

@@ -1,8 +1,6 @@
 <%= render 'banner'%>
-<div class="container">
   <div class="d-flex justify-content-evenly homepage-cardholder">
     <% @vehicles.each do |vehicle|%>
       <%= render 'shared/small_cards', vehicle: vehicle %>
     <%end%>
-</div>
 </div>
