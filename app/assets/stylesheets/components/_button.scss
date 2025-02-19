@@ -7,10 +7,8 @@
 .button-sign-up {
   width: 10em;
   height: 3.5em;
-  outline: none;
-  background-color: transparent;
   color: white;
-  transition: 1s;
+  transition: .4s;
   border-radius: 0.3em;
   font-size: 16px;
   font-weight: bold;
@@ -19,32 +17,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.button-sign-up::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 3%;
-  width: 95%;
-  height: 40%;
-  transition: 0.5s;
-  transform-origin: center;
-}
-
-.button-sign-up::before {
-  content: "";
-  transform-origin: center;
-  position: absolute;
-  top: 80%;
-  left: 3%;
-  width: 95%;
-  height: 40%;
-  transition: 0.5s;
+  border: 3px ridge #149CEA;
 }
 
 .button-sign-up:hover::before, .button-sign-up:hover::after {
-  transform: scale(0)
+  transform: scale(0);
 }
 
 .button-sign-up:hover {
