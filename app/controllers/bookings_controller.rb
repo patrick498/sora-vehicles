@@ -17,7 +17,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = 'pending'
      if @booking.save
-      redirect_to bookings_path(@vehicle)
+      flash[:notice]  = 'Your booking request has been made.'
+      redirect_to bookings_path
     else
       render 'vehicles/show', vehicle: @vehicle, booking: @booking, status: :unprocessable_entity
     end
