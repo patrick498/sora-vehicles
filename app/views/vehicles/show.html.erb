@@ -1,16 +1,16 @@
 <div class='container'>
   <div class='row'>
     <div class="col-12 col-md-7">
-      <div class="card-trip">
+      <div class="card-vehicle">
         <% if @vehicle.images.attached? %>
           <%= image_tag @vehicle.images.first %>
         <% end %>
-        <div class="card-trip-infos">
+        <div class="card-vehicle-infos">
           <div>
             <h2><%= @vehicle.brand + ' ' + @vehicle.model %></h2>
             <p><%= @vehicle.description %></p>
           </div>
-          <h2 class="card-trip-pricing">$<%= @vehicle.price_day %> / day</h2>
+          <h2 class="card-vehicle-pricing">$<%= @vehicle.price_day %> / day</h2>
         </div>
       </div>
     </div>
