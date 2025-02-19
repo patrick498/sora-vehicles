@@ -20,29 +20,6 @@
   border: 3px ridge #149CEA;
 }
 
-.button-sign-up::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 3%;
-  width: 95%;
-  height: 40%;
-  transition: 0.5s;
-  transform-origin: center;
-}
-
-.button-sign-up::before {
-  content: "";
-  transform-origin: center;
-  position: absolute;
-  top: 80%;
-  left: 3%;
-  width: 95%;
-  height: 40%;
-  transition: 0.5s;
-  background-color: #292a35;
-}
-
 .button-sign-up:hover::before, .button-sign-up:hover::after {
   transform: scale(0);
 }
