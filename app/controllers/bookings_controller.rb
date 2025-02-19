@@ -1,11 +1,11 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
-    @pending = Booking.where(user: current_user, status: "pending")
-    @accepted = Booking.where(user: current_user, status: "accepted")
-    @cancelled = Booking.where(user: current_user, status: "cancelled")
-    @denied = Booking.where(user: current_user, status: "denied")
-    @done = Booking.where(user: current_user, status: "done")
+    @bookings = current_user.bookings.paginate(page: params[:page], per_page: 5)
+    @pending = Booking.where(user: current_user, status: "pending").paginate(page: params[:page], per_page: 5)
+    @accepted = Booking.where(user: current_user, status: "accepted").paginate(page: params[:page], per_page: 5)
+    @cancelled = Booking.where(user: current_user, status: "cancelled").paginate(page: params[:page], per_page: 5)
+    @denied = Booking.where(user: current_user, status: "denied").paginate(page: params[:page], per_page: 5)
+    @done = Booking.where(user: current_user, status: "done").paginate(page: params[:page], per_page: 5)
   end
 
   def create
