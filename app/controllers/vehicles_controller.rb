@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
   # Skip authentication for the show action
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @vehicles = Vehicle.all
     @max_price = @vehicles.maximum(:price_day).to_i
