@@ -24,30 +24,24 @@
   <div class="tab-content mb-3" id="myTabContent">
     <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
       <%= render "booking_card", bookings: @bookings %>
-      <%= will_paginate @bookings, bootstrap: true, class: 'page-item justify-content-center' %>
     </div>
 
     <div class="tab-pane fade" id="pending" role="tabpanel" aria-labelledby="pending-tab">
       <%= render "booking_card", bookings: @pending %>
-      <%= will_paginate @pending, bootstrap: true, class: 'page-item justify-content-center' %>
     </div>
 
     <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
       <%= render "booking_card", bookings: @accepted %>
-      <%= will_paginate @accepted, bootstrap: true, class: 'page-item justify-content-center' %>
     </div>
 
     <div class="tab-pane fade" id="denied" role="tabpanel" aria-labelledby="denied-tab">
       <%= render "booking_card", bookings: @denied %>
-      <%= will_paginate @denied, bootstrap: true, class: 'page-item justify-content-center' %>
     </div>
     <div class="tab-pane fade" id="canceled" role="tabpanel" aria-labelledby="canceled-tab">
       <%= render "booking_card", bookings: @cancelled %>
-      <%= will_paginate @cancelled, bootstrap: true, class: 'page-item justify-content-center' %>
     </div>
     <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab">
       <%= render "booking_card", bookings: @done %>
-      <%= will_paginate @done, bootstrap: true, class: 'page-item justify-content-center' %>
     </div>
 </div>
 </div>
