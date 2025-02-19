@@ -1,37 +1,37 @@
 <div class="container">
-  <%= form_with url: vehicles_path, method: :get, class: "d-flex align-items-center justify-content-space-between my-3 gap-2" do %>
-    <div id="search-bar-top" class="w-50">
-      <div id="vehicle-type-field">
-        <%= select_tag :vehicle_type,
+  <%= form_with url: vehicles_path, method: :get, class: "search-bar-form" do %>
+    <%# <div id="search-bar-top" class="w-50"> %>
+    <div id="vehicle-type-field" class="search-bar-field">
+      <%= select_tag :vehicle_type,
               options_for_select([["", ""]] + Vehicle.vehicle_types.keys.sort.map { |t| [t.capitalize, t] }, params[:vehicle_type]),
-              class: "form-select me-2"
+              class: "form-select border-0"
         %>
-      </div>
-      <div id="brand">
-        <%= text_field_tag :brand,
+    </div>
+    <div id="brand" class="search-bar-field">
+      <%= text_field_tag :brand,
               params[:brand],
-              class: "form-control",
+              class: "form-control border-0",
               placeholder: "Type a brand..."
         %>
-      </div>
     </div>
-    <div id="search-bar-bottom" class="w-50">
-      <div id="model-field">
-        <%= text_field_tag :model,
+    <%# </div> %>
+    <%# <div id="search-bar-bottom" class="w-50"> %>
+    <div id="model-field" class="search-bar-field">
+      <%= text_field_tag :model,
               params[:model],
-              class: "form-control",
+              class: "form-control border-0",
               placeholder: "Type a model..."
         %>
-      </div>
-      <div id="location-field">
-        <%= text_field_tag :location,
+    </div>
+    <div id="location-field" class="search-bar-field">
+      <%= text_field_tag :location,
               params[:location],
-              class: "form-control",
+              class: "form-control border-0",
               placeholder: "Type a location..."
         %>
-      </div>
     </div>
-    <div id="price-field" class="w-50 mx-2 px-2" data-controller="slider"
+    <%# </div> %>
+    <div id="price-field" class="search-bar-fiedl" data-controller="slider"
           data-slider-min-value="<%= @min_price %>" data-slider-max-value="<%= @max_price %>"
           data-slider-current-min-value="<%= @current_min_price %>" data-slider-current-max-value="<%= @current_max_price %>"
           class="form-control d-block">
