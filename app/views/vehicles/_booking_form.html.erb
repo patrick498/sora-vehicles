@@ -1,0 +1,8 @@
+<div class='col-12 col-md-12 mt-4'>
+  <h3>Book this vehicle</h3>
+  <%= simple_form_for [vehicle, booking] do |f| %>
+    <%= f.input :start_date, label: 'From', html5: true, input_html: { data: { controller: 'datepicker' }, value: Date.today + 1 } %>
+    <%= f.input :end_date, label: 'To', html5: true, input_html: { data: { controller: 'datepicker' }, value: Date.today + 8 } %>
+    <%= f.button :submit, 'Request booking', class: 'btn btn-primary' %>
+  <% end %>
+</div>
