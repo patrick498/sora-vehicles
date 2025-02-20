@@ -27,3 +27,29 @@
 .button-sign-up:hover {
   box-shadow: inset 0px 0px 25px #1479EA;
 }
+
+//CSS FOR BUTTON EXPLORE MORE
+
+.button-explore {
+  width: 10em;
+  height: 3.5em;
+  color: white;
+  transition: .4s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px ridge #149CEA;
+}
+
+.button-explore:hover::before, .button-explore:hover::after {
+  transform: scale(0);
+}
+
+.button-explore:hover {
+  box-shadow: inset 0px 0px 25px #1479EA;
+}
