@@ -16,9 +16,11 @@ class BookingsController < ApplicationController
     @booking.vehicle = @vehicle
     @booking.user = current_user
     @booking.status = 'pending'
-     if @booking.save
+    if @booking.save
+      flash[:success] = 'The booking request has been made.'
       redirect_to bookings_path
     else
+      flash[:danger] = @booking.errors.full_messages.to_sentence
       render 'vehicles/show', vehicle: @vehicle, booking: @booking, status: :unprocessable_entity
     end
   end
