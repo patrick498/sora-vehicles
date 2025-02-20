@@ -41,6 +41,7 @@ class VehiclesController < ApplicationController
   def show
     @vehicle = Vehicle.find(params[:id])
     @booking = Booking.new
+    @booked_dates = @vehicle.bookings.pluck(:start_date, :end_date).map { |range| { from: range[0], to: range[1] } }
   end
 
   def new

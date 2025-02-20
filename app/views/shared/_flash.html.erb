@@ -1,0 +1,15 @@
+<div class = 'flash-container'>
+  <% flash.each do |type, message| %>
+    <% flash_class = case type.to_s
+      when "notice" then "alert-info"
+      when "success" then "alert-success"
+      else "alert-danger" # Default case
+    end %>
+    <div
+    data-controller = 'flash'
+    class = 'alert <%= flash_class %>'
+    >
+      <%= message %>
+    </div>
+  <% end %>
+</div>
