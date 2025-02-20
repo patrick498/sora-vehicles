@@ -1,13 +1,13 @@
 .small-card {
   width: 350px;
-  height: auto;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: .8s;
+  height: 320px;
+  border-radius: 1px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   background-color: white;
   position: relative;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 
   .card-vehicle-link {
     position: absolute;
@@ -19,15 +19,9 @@
 
 .small-card > img {
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
+  border-radius: 2px;
   object-fit: cover;
-}
-
-.small-card .text-container {
-  background-color: beige;
-  border-radius: 8px;
-  padding: 0.75rem;
-  margin-top: 10px;
 }
 
 .small-card h2 {
@@ -43,20 +37,12 @@
 }
 
 .small-card .small-card-infos {
-  padding: 16px;
+  padding: 8px 8px 0 8px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
-
-.small-card-infos .small-card-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
 
 /*css for card grid*/
 
