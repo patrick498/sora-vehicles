@@ -13,6 +13,10 @@
       </div>
       <h2 class="text-end fs-6"><%="$#{number_with_delimiter(vehicle.price_day.to_i, delimiter: ",")} / day"%></h2>
     </div>
+<<<<<<< HEAD
+    <h2 class="small-card-pricing">$<%= number_with_delimiter(vehicle.price_day.round) %> / Day</h2>
+=======
+>>>>>>> master
   </div>
   <%= link_to "", vehicle_path(vehicle), class: 'card-vehicle-link' %>
 </div>
