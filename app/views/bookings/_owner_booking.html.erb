@@ -39,6 +39,12 @@
             <% end %>
           </div>
         </div>
+          <div class="card-booking-infos" style="text-align: left; width: 28%;">
+            <%= simple_form_for booking do |f| %>
+              <%= f.input :status, collection: Booking.statuses.keys %>
+              <%= f.button :submit %>
+            <% end %>
+          </div>
       </div>
     </div>
   <% end %>

@@ -6,8 +6,9 @@ class BookingsController < ApplicationController
     @cancelled = paginate_order("cancelled")
     @denied = paginate_order("denied")
     @done = paginate_order("done")
-
-    @booked_vehicles = current_user.owner_bookings
+    current_user.owned_vehicles.each do |vehicle|
+      @owner_bookings = vehicle.bookings.order(start_date: :asc).paginate(page: params[:page], per_page: 5)
+    end
   end
 
   def create
@@ -23,6 +24,12 @@ class BookingsController < ApplicationController
     else
       render 'vehicles/show', vehicle: @vehicle, booking: @booking, status: :unprocessable_entity
     end
+  end
+
+  def update
+    booking = Booking.find(params[:id])
+    booking.update(params.require(:booking).permit(:status))
+    booking.save
   end
 
   private
