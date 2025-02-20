@@ -1,8 +1,7 @@
 <div class='col-12 col-md-12 mt-4'>
   <h3>Book this vehicle</h3>
   <div data-controller="booking-price" data-booking-price-price-value="<%= number_with_delimiter(@vehicle.price_day.round) %>" class="mt-5 border p-3 rounded">
- <p class='fw-bold fs-3'>$<%= number_with_delimiter(@vehicle.price_day.round) %> <small class='fw-light'>/ day</small></p>
-  <%= simple_form_for [vehicle, booking] do |f| %>
+    <%= simple_form_for [vehicle, booking] do |f| %>
     <%= f.input :start_date, html5: true, input_html: { data: { booking_price_target: 'start_date', action: 'change->booking-price#update' }, min: Date.today } %>
     <%= f.input :end_date, html5: true, input_html: { data: { booking_price_target: 'end_date', action: 'change->booking-price#update' }, min: Date.today } %>
     <%= f.button :submit, 'Request booking', class: 'btn btn-primary' %>
