@@ -1,11 +1,13 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings.order(start_date: :asc).paginate(page: params[:page], per_page: 8)
-    @pending = Booking.where(user: current_user, status: "pending").order(start_date: :asc).paginate(page: params[:page], per_page: 5)
-    @accepted = Booking.where(user: current_user, status: "accepted").order(start_date: :asc).paginate(page: params[:page], per_page: 5)
-    @cancelled = Booking.where(user: current_user, status: "cancelled").order(start_date: :asc).paginate(page: params[:page], per_page: 5)
-    @denied = Booking.where(user: current_user, status: "denied").order(start_date: :asc).paginate(page: params[:page], per_page: 5)
-    @done = Booking.where(user: current_user, status: "done").paginate(page: params[:page], per_page: 5)
+    @bookings = current_user.bookings.order(start_date: :asc).paginate(page: params[:page], per_page: 5)
+    @pending = paginate_order("pending")
+    @accepted = paginate_order("accepted")
+    @cancelled = paginate_order("cancelled")
+    @denied = paginate_order("denied")
+    @done = paginate_order("done")
+
+    @booked_vehicles = current_user.owner_bookings
   end
 
   def create
@@ -27,5 +29,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:vehicle, :user, :start_date, :end_date, :status, :total_price)
+  end
+
+  def paginate_order(status)
+    Booking.where(user: current_user, status: status).order(start_date: :asc).paginate(page: params[:page], per_page: 5)
   end
 end

@@ -25,15 +25,12 @@
     <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
       <%= render "booking_card", bookings: @bookings %>
     </div>
-
     <div class="tab-pane fade" id="pending" role="tabpanel" aria-labelledby="pending-tab">
       <%= render "booking_card", bookings: @pending %>
     </div>
-
     <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
       <%= render "booking_card", bookings: @accepted %>
     </div>
-
     <div class="tab-pane fade" id="denied" role="tabpanel" aria-labelledby="denied-tab">
       <%= render "booking_card", bookings: @denied %>
     </div>
