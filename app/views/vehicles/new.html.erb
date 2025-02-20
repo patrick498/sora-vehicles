@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Add a vehicle to our family</h1>
+  <%= simple_form_for @vehicle do |f| %>
+    <%= f.input :images, as: :file, input_html: { multiple: true, accept: 'image/*' } %>
+    <% @vehicle.images.each do |image| %>
+      <%= cl_image_tag image.key %>
+    <% end %>
+    <%= f.input :brand%>
+    <%= f.input :vehicle_type, collection: Vehicle.vehicle_types%>
+    <%= f.input :model%>
+    <%= f.input :description%>
+    <%= f.input :location%>
+    <%= f.input :price_day%>
+    <%= f.submit 'Add', class: 'btn mt-2'%>
+  <%end%>
+</div>

@@ -1,0 +1,10 @@
+.flash-container {
+  position: fixed;
+  top: 70px;
+  /* Adjust this value based on your navbar height */
+  right: 20px;
+  z-index: 1000;
+  /* Ensures it stays above other elements */
+  max-width: 300px;
+  /* Prevents overly wide messages */
+}

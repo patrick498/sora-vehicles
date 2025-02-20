@@ -303,8 +303,11 @@ vehicles.each do |vehicle|
     vehicle.images.attach(
       io: URI.open(image_url),
       filename: File.basename(URI.parse(image_url).path),
-      content_type: 'image/jpeg' # Adjust the content type if needed
-    )
+      content_type: 'image/jpeg') # Adjust the content type if needed
+      rescue OpenURI::HTTPError => e
+      puts "❌ Failed to attach image: #{e.message}"
+      rescue Errno::ENOENT, URI::InvalidURIError, Net::OpenTimeout => e
+      puts "❌ Image URL is invalid or unreachable: #{e.message}"
   end
 end
 puts "Images attached..."
