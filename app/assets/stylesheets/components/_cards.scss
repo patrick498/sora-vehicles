@@ -1,14 +1,8 @@
 .small-card {
   width: 350px;
-<<<<<<< HEAD
-  height: auto;
-  padding: 0.5rem;
-  transition: .8s;
-=======
   height: 320px;
   border-radius: 1px;
   padding: 8px;
->>>>>>> master
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -25,13 +19,9 @@
 
 .small-card > img {
   width: 100%;
-<<<<<<< HEAD
-  object-fit: contain;
-=======
   height: 100%;
   border-radius: 2px;
   object-fit: cover;
->>>>>>> master
 }
 
 .small-card h2 {
@@ -54,7 +44,6 @@
   position: relative;
 }
 
-<<<<<<< HEAD
 .small-card-infos .small-card-user {
   position: absolute;
   right: 16px;
@@ -62,8 +51,6 @@
   width: 40px;
 }
 
-=======
->>>>>>> master
 /*css for card grid*/
 
 .cards {
