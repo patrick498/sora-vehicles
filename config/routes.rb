@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :vehicles, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:create, :update]
   end
 
-  resources :bookings, only: :index
+  resources :bookings, only: [:index, :update]
 
   namespace :owner do
     resources :bookings, only: :index

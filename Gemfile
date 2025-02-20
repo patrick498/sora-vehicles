@@ -80,3 +80,5 @@ gem 'cloudinary', '~> 1.16.0'
 gem "pagy"
 gem 'will_paginate', '~> 3.3'
 gem 'will_paginate-bootstrap'
+gem 'kaminari'
+gem 'will_paginate-bootstrap4'
