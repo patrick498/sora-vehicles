@@ -50,31 +50,22 @@
       <input type="hidden" name="max_price" id="max_price" value="value" data-slider-target="hiddenMaxPrice">
     </div>
   <% end %>
-  <div class='cards-map-container'>
-    <div class="cards mb-3">
-      <% if @vehicles.any? %>
-        <% @vehicles.each do |vehicle| %>
-          <%= render 'shared/small_cards', vehicle: vehicle %>
+  <turbo-frame id="results">
+    <div class='cards-map-container'>
+      <div class="cards mb-3">
+        <% if @vehicles.any? %>
+          <% @vehicles.each do |vehicle| %>
+            <%= render 'shared/small_cards', vehicle: vehicle %>
+          <% end %>
+        <% else %>
+          <p class="fs-5 mt-3">No vehicle found, try with other filters...</p>
         <% end %>
-      <% else %>
-        <p class="fs-5 mt-3">No vehicle found, try with other filters...</p>
-      <% end %>
-    </div>
-    <div class='map'
+      </div>
+      <div class='map ms-3'
     data-controller = 'map'
     data-map-markers-value = "<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  <% end %>
-  <turbo-frame id="results">
-    <div class="cards mb-3">
-      <% if @vehicles.any? %>
-        <% @vehicles.each do |vehicle| %>
-          <%= render 'shared/small_cards', vehicle: vehicle %>
-        <% end %>
-      <% else %>
-        <p class="fs-5 mt-3">No vehicle found, try with other filters...</p>
-      <% end %>
+      </div>
     </div>
   </turbo-frame>
 </div>
