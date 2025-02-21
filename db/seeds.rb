@@ -1,10 +1,10 @@
 require "open-uri"
 
-clean = false
-users = false
-vehicles = false
-images = false
-bookings = false
+clean = true
+users = true
+vehicles = true
+images = true
+bookings = true
 reviews = true
 
 if clean
