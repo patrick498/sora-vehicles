@@ -14,5 +14,5 @@
       <h2 class="text-end fs-6"><%="$#{number_with_delimiter(vehicle.price_day.to_i, delimiter: ",")} / day"%></h2>
     </div>
   </div>
-  <%= link_to "", vehicle_path(vehicle), class: 'card-vehicle-link' %>
+  <%= link_to "", vehicle_path(vehicle), data: { turbo: false }, class: 'card-vehicle-link' %>
 </div>
