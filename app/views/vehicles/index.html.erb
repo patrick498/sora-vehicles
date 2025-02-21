@@ -49,11 +49,9 @@
       <input type="hidden" name="min_price" id="min_price" value="value" data-slider-target="hiddenMinPrice">
       <input type="hidden" name="max_price" id="max_price" value="value" data-slider-target="hiddenMaxPrice">
     </div>
-    <%#= button_tag class: "btn button-green rounded-circle h-75", type: "submit" do %>
-      <%# <i class="fa-solid fa-magnifying-glass"></i> %>
-      <%# end %>
-    <% end %>
-    <turbo-frame id="results">
+  <% end %>
+  <turbo-frame id="results">
+    <div class='cards-map-container'>
       <div class="cards mb-3">
         <% if @vehicles.any? %>
           <% @vehicles.each do |vehicle| %>
@@ -63,5 +61,11 @@
           <p class="fs-5 mt-3">No vehicle found, try with other filters...</p>
         <% end %>
       </div>
-    </turbo-frame>
-  </div>
+      <div class='map ms-3'
+    data-controller = 'map'
+    data-map-markers-value = "<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </turbo-frame>
+</div>

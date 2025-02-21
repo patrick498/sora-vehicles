@@ -12,7 +12,7 @@ class VehiclesController < ApplicationController
       vehicle_type: params[:vehicle_type],
       brand: params[:brand],
       model: params[:model],
-      location: params[:location]
+      # location: params[:location]
     }.compact_blank # Removes nil or empty values
 
     if filters.present?
@@ -35,9 +35,19 @@ class VehiclesController < ApplicationController
       @current_max_price = params[:max_price]
     end
 
+    if params[:location].present?
+      @vehicles = @vehicles.near(params[:location], 1000)
+    end
+
+    @markers = @vehicles.geocoded.map do |vehicle|
+      {
+        lat: vehicle.latitude,
+        lng: vehicle.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {vehicle: vehicle}),
+        marker_html: render_to_string(partial: 'marker', locals: {vehicle: vehicle})
+      }
+    end
   end
-
-
   def show
     @vehicle = Vehicle.find(params[:id])
     @booking = Booking.new
