@@ -10,7 +10,7 @@ class Booking < ApplicationRecord
   validate :no_overlapping_bookings
 
   def no_overlapping_bookings
-    overlapping_bookings = Booking.where(vehicle: vehicle).where('start_date < ? AND end_date > ?', end_date, start_date)
+    overlapping_bookings = Booking.where(vehicle: vehicle).where('start_date < ? AND end_date > ?', end_date, start_date).where(status: "accepted")
     if overlapping_bookings.exists?
       errors.add(:base, "These dates are already booked. Please select different dates.")
     end

@@ -1,9 +1,8 @@
 class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :booked_vehicles, through: :bookings, source: :vehicle
-
   has_many :owned_vehicles, class_name: "Vehicle", foreign_key: "user_id", dependent: :destroy
-  has_many :owner_bookings, through: :vehicles, source: :booking
+  has_many :owner_bookings, through: :owned_vehicles, source: :bookings
   validates :first_name, presence: true
   validates :last_name, presence: true
 

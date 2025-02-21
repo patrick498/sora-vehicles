@@ -6,9 +6,7 @@ class BookingsController < ApplicationController
     @cancelled = paginate_order("cancelled")
     @denied = paginate_order("denied")
     @done = paginate_order("done")
-    current_user.owned_vehicles.each do |vehicle|
-      @owner_bookings = vehicle.bookings.order(start_date: :asc).paginate(page: params[:page], per_page: 5)
-    end
+    @owner_bookings = current_user.owner_bookings.order(start_date: :asc).paginate(page: params[:page], per_page: 5)
   end
 
   def create
@@ -29,9 +27,20 @@ class BookingsController < ApplicationController
   end
 
   def update
-    booking = Booking.find(params[:id])
-    booking.update(params.require(:booking).permit(:status))
-    booking.save
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    respond_to do |format|
+      format.html {  redirect_to bookings_path(current_user) }
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("owner",
+          partial: 'bookings/owner_booking',
+          locals: {
+            bookings: current_user.owner_bookings.order(start_date: :asc).paginate(page: params[:page], per_page: 5),
+            display_none: false
+          }
+        )
+      end
+    end
   end
 
   private
