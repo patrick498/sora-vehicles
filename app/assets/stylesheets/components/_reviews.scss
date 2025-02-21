@@ -1,0 +1,59 @@
+.reviews {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 24px;
+  justify-items: center;
+}
+
+.review-card {
+  width: 300px;
+  height: auto;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.star-rating {
+  font-weight: 900;
+  color: #FD4;
+  // text-shadow: 0.5px 0.5px 1px #E67E23;
+  text-shadow: 0.3px 0.3px 1px rgba($color: #E67E23, $alpha: 0.7);
+  font-size: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .reviews {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .reviews {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .reviews {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .reviews {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

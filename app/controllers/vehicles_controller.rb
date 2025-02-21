@@ -52,5 +52,27 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.find(params[:id])
     @booking = Booking.new
     @booked_dates = @vehicle.bookings.pluck(:start_date, :end_date).map { |range| { from: range[0], to: range[1] } }
+    @reviews = @vehicle.reviews
   end
+
+  def new
+    @vehicle = Vehicle.new
+  end
+
+  def create
+    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle.user = current_user
+    if @vehicle.save
+      redirect_to vehicle_path(@vehicle)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+private
+
+def vehicle_params
+  params.require(:vehicle).permit(:brand, :vehicle_type, :model, :description, :location, :price_day, images:[])
+end
+
 end

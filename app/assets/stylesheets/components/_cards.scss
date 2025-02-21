@@ -45,6 +45,13 @@
   position: relative;
 }
 
+.small-card-infos .small-card-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
 /*css for card grid*/
 
 .cards-map-container {

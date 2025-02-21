@@ -1,0 +1,78 @@
+<div data-toggle-target="ownerBookings" style="display: <%= display_none ? "none" : "block" %> ;" id="owner">
+  <h1 class="mt-3">My Listings</h1>
+  <% if bookings.any? %>
+    <% bookings.each do |booking| %>
+      <div class="container my-3">
+        <div class="row">
+          <div class="card-booking col">
+            <% if booking.start_date.to_date == Date.today%>
+              <div class="card-booking-infos col-1">
+                <p class='text-warning'>Today</p>
+              </div>
+            <% elsif (booking.start_date.to_date - Date.today).to_i < 5 %>
+              <div class="card-booking-infos col-1">
+                <p class='text-warning'>In <%= (booking.start_date.to_date - Date.today).to_i %></p>
+                <p class='text-warning'><%= (booking.start_date.to_date - Date.today).to_i > 1 ? "days" : "day"  %></p>
+              </div>
+            <% else %>
+              <div class="card-booking-infos col-1">
+                <p><%= booking.start_date.strftime("%d") %></p>
+                <h2><%= booking.start_date.strftime("%a") %></h2>
+              </div>
+            <% end %>
+            <div class="d-flex justify-content-between col-9" style="border-left: solid 1px lightgrey;">
+              <div class="card-booking-infos" style="text-align: left; width: 55%;">
+                <p><i class="fa-solid fa-calendar-days"></i> <%= booking.start_date.strftime("%Y %b %d") %> - <%= booking.end_date.strftime("%Y %b %d") %></p>
+                <p class="mt-2"><i class="fa-solid fa-location-dot"></i> <%= booking.vehicle.location %></p>
+              </div>
+              <div class="card-booking-infos" style="text-align: left; width: 40%;">
+                <h2><%= link_to booking.vehicle.model, vehicle_path(booking.vehicle), class:"text-decoration-none text-secondary" %></h2>
+                <p><%= booking.vehicle.brand %></p>
+              </div>
+              <div class="card-booking-infos" style="text-align: left; width: 25%;">
+                <p><i class="fa-solid fa-dollar-sign"></i> <%= number_to_currency(booking.total_price, unit: "", precision:0) %></p>
+              </div>
+              <div class="card-booking-infos" style="text-align: left; width: 28%;">
+                <% if booking.status == "pending" %>
+                  <p class="text-warning"><i class="fa-solid fa-hourglass-half"></i> <%= booking.status.upcase %></p>
+                <% elsif booking.status == "accepted" || booking.status == "done" %>
+                  <p class="text-success"><i class="fa-solid fa-circle-check"></i> <%= booking.status.upcase %></p>
+                <% else %>
+                  <p class="text-danger"><i class="fa-solid fa-ban"> </i> <%= booking.status.upcase %></p>
+                <% end %>
+              </div>
+            </div>
+            <% if booking.status == "pending" %>
+              <div class="card-booking-infos me-0 col-1">
+                <div class="d-flex">
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                    <%= f.submit 'Accept', class: 'btn btn-info' %>
+                  <% end %>
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: 'denied'} %>
+                    <%= f.submit 'Reject', class: 'btn btn-light' %>
+                  <% end %>
+                </div>
+              </div>
+            <% elsif booking.status == "accepted"%>
+              <div class="card-booking-infos me-0 col-1">
+                <%= simple_form_for booking do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'cancelled'} %>
+                  <%= f.submit 'Cancel', class: 'btn btn-danger text-light' %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="container">
+      <% if bookings.total_entries > bookings.per_page %>
+        <%= will_paginate bookings, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="mt-5">Nothing to see yet</p>
+  <% end %>
+</div>
