@@ -7,7 +7,7 @@
         <% @vehicle.images.each do |image| %>
           <%= cl_image_tag image.key %>
         <% end %>
-        <%= f.input :vehicle_type, collection: Vehicle.vehicle_types.keys.sort.map { |v| v.capitalize }%>
+        <%= f.input :vehicle_type, collection: Vehicle.vehicle_types.keys %>
         <%= f.input :brand%>
         <%= f.input :model%>
         <%= f.input :description%>
