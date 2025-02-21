@@ -1,18 +1,17 @@
 <div class="container" data-controller="toggle">
-  <h1 class="mt-3">My bookings</h1>
-
-  <div class="form-check form-switch mt-3">
+<div class="d-flex mt-3">
+  <div>My bookings</div>
+  <div class="form-check form-switch ms-2">
     <input class="form-check-input" type="checkbox" id="bookingToggle" data-action="change->toggle#toggle">
-    <label class="form-check-label" for="bookingToggle">Reservation</label>
+    <label class="form-check-label" for="bookingToggle">My listings</label>
   </div>
+</div>
 
   <div class="mb-3">
     <div data-toggle-target="userBookings">
       <%= render "user_booking", bookings: @bookings, accepted: @accepted, pending: @pending, denied: @denied, cancelled: @cancelled, done: @done %>
     </div>
 
-    <div data-toggle-target="ownerBookings" style="display: none;">
-      <%= render "owner_booking", bookings: @owner_bookings %>
-    </div>
+      <%= render "owner_booking", bookings: @owner_bookings, display_none: true%>
   </div>
 </div>
