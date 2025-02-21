@@ -9,4 +9,6 @@ class Vehicle < ApplicationRecord
   validates :price_day, numericality: true
   validates :description, length: { in: 15..200 }
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end

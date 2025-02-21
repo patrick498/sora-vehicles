@@ -1,0 +1,9 @@
+<div class="card-marker">
+  <% if vehicle.images.attached? %>
+    <%= image_tag vehicle.images.first %>
+  <% end %>
+  <div class="card-marker-info">
+    <h4><%= vehicle.brand + ' ' + vehicle.model %></h4>
+  </div>
+</div>
+</div>
