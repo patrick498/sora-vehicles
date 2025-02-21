@@ -17,9 +17,10 @@
     </div>
     <div class="col-12 col-md-5">
       <% if @vehicle.images.attached? %>
-        <div class="vehicle-images mb-2">
+        <div class="vehicle-images mb-2" data-controller="lightbox" id="fixed-size">
           <% @vehicle.images.drop(1).each do |image| %>
-            <%= cl_image_tag image.key, class: 'vehicle-image' %>
+          <a href="<%=cl_image_path image.key%>">
+            <%= cl_image_tag image.key, class: 'vehicle-image' %></a>
           <% end %>
         </div>
       <% else %>
