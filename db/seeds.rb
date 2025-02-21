@@ -65,7 +65,7 @@ if vehicles
     model: "LaFerrari",
     description: "The Ferrari LaFerrari is a hybrid sports car combining exceptional speed and futuristic technology, designed for thrill-seekers and luxury enthusiasts.",
     location: "Monaco",
-    price_day: 50000,
+    price_day: 5000,
     user: users.sample
   )
 
@@ -75,7 +75,7 @@ if vehicles
     model: "Aventador SVJ",
     description: "The Lamborghini Aventador SVJ boasts cutting-edge aerodynamics and unmatched performance, perfect for those who seek the ultimate driving experience.",
     location: "Los Angeles",
-    price_day: 45000,
+    price_day: 4500,
     user: users.sample
   )
 
@@ -85,7 +85,7 @@ if vehicles
     model: "911 Turbo S",
     description: "Porsche's 911 Turbo S delivers precision engineering and blistering speed, an iconic symbol of high-performance luxury.",
     location: "Dubai",
-    price_day: 40000,
+    price_day: 4000,
     user: users.sample
   )
 
@@ -95,7 +95,7 @@ if vehicles
     model: "Phantom",
     description: "The Rolls-Royce Phantom represents ultimate opulence, combining elegance with an incredibly smooth ride that redefines luxury travel.",
     location: "London",
-    price_day: 60000,
+    price_day: 6000,
     user: users.sample
   )
 
@@ -105,7 +105,7 @@ if vehicles
     model: "Continental GT",
     description: "The Bentley Continental GT is a grand tourer with unrivaled luxury, delivering an experience of pure indulgence and dynamic performance.",
     location: "Paris",
-    price_day: 50000,
+    price_day: 5000,
     user: users.sample
   )
 
@@ -115,7 +115,7 @@ if vehicles
     model: "Predator 108",
     description: "The Sunseeker Predator 108 is a masterpiece of nautical engineering, offering stunning performance and luxurious amenities for ocean exploration.",
     location: "Monaco",
-    price_day: 150000,
+    price_day: 15000,
     user: users.sample
   )
 
@@ -125,7 +125,7 @@ if vehicles
     model: "Grande 35 Metri",
     description: "The Azimut Grande 35 Metri is a superyacht that exudes sophistication, featuring five-star luxury interiors and unparalleled views of the sea.",
     location: "Miami",
-    price_day: 200000,
+    price_day: 20000,
     user: users.sample
   )
 
@@ -135,7 +135,7 @@ if vehicles
     model: "Y72",
     description: "The Princess Y72 is a luxurious flybridge yacht that combines graceful design with exceptional performance on the open waters.",
     location: "Ibiza",
-    price_day: 120000,
+    price_day: 12000,
     user: users.sample
   )
 
@@ -145,7 +145,7 @@ if vehicles
     model: "Lumiere",
     description: "Benetti Lumiere offers extraordinary luxury, providing lavish spaces, a serene atmosphere, and incredible service for its guests.",
     location: "St. Tropez",
-    price_day: 250000,
+    price_day: 25000,
     user: users.sample
   )
 
@@ -155,7 +155,7 @@ if vehicles
     model: "Pershing 140",
     description: "The Pershing 140 is a high-performance superyacht with sleek lines, offering ultimate comfort and cutting-edge technology for an unforgettable experience.",
     location: "Cannes",
-    price_day: 220000,
+    price_day: 22000,
     user: users.sample
   )
 
@@ -165,7 +165,7 @@ if vehicles
     model: "G700",
     description: "The Gulfstream G700 is the epitome of luxury in aviation, featuring spacious cabins, top-tier technology, and the ability to fly at supersonic speeds.",
     location: "New York",
-    price_day: 500000,
+    price_day: 50000,
     user: users.sample
   )
 
@@ -175,7 +175,7 @@ if vehicles
     model: "Global 7500",
     description: "The Bombardier Global 7500 redefines private travel with its ultra-long range, ultra-luxurious cabin, and superior performance for the most discerning passengers.",
     location: "Los Angeles",
-    price_day: 600000,
+    price_day: 60000,
     user: users.sample
   )
 
@@ -185,7 +185,7 @@ if vehicles
     model: "Falcon 8X",
     description: "The Dassault Falcon 8X is a sophisticated private jet designed for comfort and speed, offering a seamless travel experience to any destination.",
     location: "Dubai",
-    price_day: 550000,
+    price_day: 55000,
     user: users.sample
   )
 
@@ -195,7 +195,7 @@ if vehicles
     model: "Lineage 1000E",
     description: "The Embraer Lineage 1000E offers unmatched luxury and versatility, featuring an expansive cabin with customizable interiors for a personalized experience.",
     location: "Geneva",
-    price_day: 450000,
+    price_day: 45000,
     user: users.sample
   )
 
@@ -205,7 +205,7 @@ if vehicles
     model: "Citation Longitude",
     description: "The Citation Longitude delivers unparalleled comfort and performance, providing smooth rides and top-tier amenities for business and leisure travel.",
     location: "London",
-    price_day: 400000,
+    price_day: 40000,
     user: users.sample
   )
 
@@ -215,7 +215,7 @@ if vehicles
     model: "Panigale V4",
     description: "The Ducati Panigale V4 is a superbike that merges extreme performance with Italian craftsmanship, ideal for thrill-seekers and performance aficionados.",
     location: "Milan",
-    price_day: 12000,
+    price_day: 1200,
     user: users.sample
   )
 
@@ -225,7 +225,7 @@ if vehicles
     model: "CVO Road Glide",
     description: "The Harley-Davidson CVO Road Glide offers unmatched luxury in a touring motorcycle, combining a powerful engine with exceptional comfort on long rides.",
     location: "Los Angeles",
-    price_day: 10000,
+    price_day: 1000,
     user: users.sample
   )
 
@@ -235,7 +235,7 @@ if vehicles
     model: "K1600 Grand America",
     description: "BMW's K1600 Grand America offers ultimate luxury touring with an inline-six engine, premium comfort features, and advanced technology for a smooth ride.",
     location: "Munich",
-    price_day: 15000,
+    price_day: 1500,
     user: users.sample
   )
 
@@ -245,7 +245,7 @@ if vehicles
     model: "Chieftain Elite",
     description: "The Indian Chieftain Elite combines vintage styling with modern performance, offering top-tier comfort and luxury on the open road.",
     location: "Chicago",
-    price_day: 12000,
+    price_day: 1200,
     user: users.sample
   )
 
@@ -255,7 +255,7 @@ if vehicles
     model: "Rocket 3 R",
     description: "Triumph Rocket 3 R is an iconic motorcycle with a massive 2500cc engine, delivering power and luxury for the rider who craves exhilaration.",
     location: "London",
-    price_day: 18000,
+    price_day: 1800,
     user: users.sample
   )
 
@@ -265,7 +265,7 @@ if vehicles
     model: "Speedtail",
     description: "The McLaren Speedtail is a hypercar with futuristic design and performance, offering an unrivaled driving experience that pushes the limits of innovation.",
     location: "Monaco",
-    price_day: 80000,
+    price_day: 8000,
     user: users.sample
   )
   puts "Added #{Vehicle.count} vehicles\n"
