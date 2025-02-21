@@ -35,6 +35,11 @@ class VehiclesController < ApplicationController
       @current_max_price = params[:max_price]
     end
 
+    # respond_to do |format|
+    #   format.html # Standard HTML response (for full page loads)
+    #   format.turbo_stream { render partial: "items/cards", locals: { cards: @cards } }
+    # end
+
   end
 
 

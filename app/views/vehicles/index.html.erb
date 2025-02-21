@@ -1,16 +1,18 @@
 <div class="container">
-  <%= form_with url: vehicles_path, method: :get, class: "search-bar-form" do %>
+  <%= form_with url: vehicles_path, method: :get, data: { controller: "search", turbo_frame: "results", search_target: "form" }, class: "search-bar-form" do %>
     <div id="vehicle-type-field" class="search-bar-field">
       <p>Vehicle type</p>
       <%= select_tag :vehicle_type,
               options_for_select([["All", ""]] + Vehicle.vehicle_types.keys.sort.map { |t| [t.capitalize, t] }, params[:vehicle_type]),
-              class: "border-0 bg-transparent w-100 form-select"
+              class: "border-0 bg-transparent w-100 form-select",
+              data: { action: "input->search#search" }
         %>
     </div>
     <div id="brand-field" class="search-bar-field">
       <p>Brand</p>
       <%= text_field_tag :brand,
               params[:brand],
+              data: { action: "input->search#search" },
               class: "border-0 bg-transparent",
               placeholder: "What brand?"
         %>
@@ -19,6 +21,7 @@
       <p>Model</p>
       <%= text_field_tag :model,
               params[:model],
+              data: { action: "input->search#search" },
               class: "border-0 bg-transparent",
               placeholder: "What model?"
         %>
@@ -27,6 +30,7 @@
       <p>Location</p>
       <%= text_field_tag :location,
               params[:location],
+              data: { action: "input->search#search" },
               class: "border-0 bg-transparent",
               placeholder: "Where?"
         %>
@@ -45,17 +49,19 @@
       <input type="hidden" name="min_price" id="min_price" value="value" data-slider-target="hiddenMinPrice">
       <input type="hidden" name="max_price" id="max_price" value="value" data-slider-target="hiddenMaxPrice">
     </div>
-    <%= button_tag class: "btn button-green rounded-circle h-75", type: "submit" do %>
-      <i class="fa-solid fa-magnifying-glass"></i>
+    <%#= button_tag class: "btn button-green rounded-circle h-75", type: "submit" do %>
+      <%# <i class="fa-solid fa-magnifying-glass"></i> %>
+      <%# end %>
     <% end %>
-  <% end %>
-  <div class="cards mb-3">
-    <% if @vehicles.any? %>
-      <% @vehicles.each do |vehicle| %>
-        <%= render 'shared/small_cards', vehicle: vehicle %>
-      <% end %>
-    <% else %>
-      <p class="fs-5 mt-3">No vehicle found, try with other filters...</p>
-    <% end %>
+    <turbo-frame id="results">
+      <div class="cards mb-3">
+        <% if @vehicles.any? %>
+          <% @vehicles.each do |vehicle| %>
+            <%= render 'shared/small_cards', vehicle: vehicle %>
+          <% end %>
+        <% else %>
+          <p class="fs-5 mt-3">No vehicle found, try with other filters...</p>
+        <% end %>
+      </div>
+    </turbo-frame>
   </div>
-</div>

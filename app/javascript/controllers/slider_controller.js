@@ -25,12 +25,14 @@ export default class extends Controller {
     const maxValue = this.maxValueTarget;
     const hiddenMin = this.hiddenMinPriceTarget;
     const hiddenMax = this.hiddenMaxPriceTarget;
+    const controller = this.element;
 
     this.rangeSliderTarget.noUiSlider.on("update", function (values, handle) {
       minValue.innerHTML = Math.round(values[0]);
       maxValue.innerHTML = Math.round(values[1]);
       hiddenMin.value = Math.round(values[0]);
       hiddenMax.value = Math.round(values[1]);
+      controller.dispatchEvent(new CustomEvent("slider:change", { bubbles: true }))
     })
   }
 
