@@ -35,11 +35,6 @@ class VehiclesController < ApplicationController
       @current_max_price = params[:max_price]
     end
 
-    # respond_to do |format|
-    #   format.html # Standard HTML response (for full page loads)
-    #   format.turbo_stream { render partial: "items/cards", locals: { cards: @cards } }
-    # end
-
   end
 
 
@@ -47,6 +42,7 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.find(params[:id])
     @booking = Booking.new
     @booked_dates = @vehicle.bookings.pluck(:start_date, :end_date).map { |range| { from: range[0], to: range[1] } }
+    @reviews = @vehicle.reviews
   end
 
   def new
