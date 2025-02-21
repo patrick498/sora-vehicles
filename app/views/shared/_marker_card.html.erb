@@ -3,7 +3,7 @@
     <%= image_tag vehicle.images.first %>
   <% end %>
   <div class="card-marker-info">
-    <h4><%= vehicle.brand + ' ' + vehicle.model %></h4>
+    <p><%= vehicle.brand + ' ' + vehicle.model %></p>
   </div>
-</div>
+  <%= link_to "", vehicle_path(vehicle), data: { turbo: false }, class: 'card-vehicle-link' %>
 </div>
