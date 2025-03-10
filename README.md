@@ -1,1 +1,60 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# 📚 Project Name
+
+Project description goes here
+
+_DROP SCREENSHOT HERE_
+<br>
+App home: https://sora-v-d0ff57552de4.herokuapp.com/
+
+
+## Getting Started
+### Setup
+
+Install gems
+```
+bundle install
+```
+
+### ENV Variables
+Create `.env` file
+```
+touch .env
+```
+Inside `.env`, set these variables. For any APIs, see group Slack channel.
+```
+CLOUDINARY_URL=your_own_cloudinary_url_key
+MAPBOX_API_KEY=your_own_mapbox_api_key
+```
+
+### DB Setup
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
+### Run a server
+```
+rails s
+```
+
+## Built With
+- [Rails 7](https://guides.rubyonrails.org/) - Backend / Front-end
+- [Stimulus JS](https://stimulus.hotwired.dev/) - Front-end JS
+- [Heroku](https://heroku.com/) - Deployment
+- [PostgreSQL](https://www.postgresql.org/) - Database
+- [Bootstrap](https://getbootstrap.com/) — Styling
+- [Figma](https://www.figma.com) — Prototyping
+
+
+## Team Members
+- [André Yuki Ide](https://www.linkedin.com/in/andreide/)
+- [Yu Sekiguchi](https://www.linkedin.com/in/yu-sekiguchi/)
+- [Axel Bailleres](https://www.linkedin.com/in/axel-bailleres-67506a311/)
+- [Patrick Pailhes](https://www.linkedin.com/in/patrick-pailhes-48b141327/)
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+This project is licensed under the MIT License
