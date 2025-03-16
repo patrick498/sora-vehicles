@@ -1,6 +1,6 @@
 # 📚 Sora Vehicles
 
-Exclusive Luxury Rentals for Cars, Motorcycles, Yachts, & Private Jets
+A web app where users rent luxury vehicles—cars, private jets, yachts—while owners can list and manage their rentals seamlessly.
 
 ![Sora Vehicles Screenshot](https://github.com/user-attachments/assets/025f3522-23e0-4c7b-a2bd-84db556c0f04)
 
@@ -50,9 +50,9 @@ rails s
 
 ## Team Members
 - [André Yuki Ide](https://www.linkedin.com/in/andreide/)
-- [Yu Sekiguchi](https://www.linkedin.com/in/yu-sekiguchi/)
 - [Axel Bailleres](https://www.linkedin.com/in/axel-bailleres-67506a311/)
 - [Patrick Pailhes](https://www.linkedin.com/in/patrick-pailhes-48b141327/)
+- [Yu Sekiguchi](https://www.linkedin.com/in/yu-sekiguchi/)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
